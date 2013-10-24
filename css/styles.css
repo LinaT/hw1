@@ -1,35 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Walter+Turncoat);
 @import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);
 @import url(http://fonts.googleapis.com/css?family=New+Rocker);
+@import url(http://fonts.googleapis.com/css?family=Miltonian+Tattoo);
 
 /* reset CSS file to reset browser default styling to a consistent starting point */
 @import url(reset.css);
 
 body {
-	background-repeat: repeat;
-    background: url(../img/pizza1.jpg);
     font-family: 'Walter Turncoat', sans-serif;
+    background-image: url(../img/toppings.jpg);
+    background-repeat: repeat;
     font-size: 20px;
-    padding: 20px;
 }
 
 p {
 	padding: 10px;
 }
 
-.dog {
-	padding-left: 10px;
-	padding-top: 10px;
-	padding-right: 10px;
-	display: inline-block;
 
+.container {
+	background: white;
 }
+.dog{
+	max-width: 100%;
+	padding: 10px;
 
-.pageTitle {
-	font-family: 'IM Fell Double Pica SC', sans-serif;
-	font-size: 110px;
-
-	
 }
 
 .motto {
@@ -38,38 +33,24 @@ p {
 	text-align: center;
 } 
 
-.content-box {
-	background-repeat: repeat;
-    background: url(../img/tiles.png);
-	margin: 0 auto;
-	width: 60%;
-	box-shadow: 2px 2px 6px #555;
-	float: right;	
-}
-
-nav ul {
-	border-top: medium double #FF7800;
-	border-bottom: medium double #FF7800;
-	background-color: #028E9B;
-}
-nav li {
-	display: inline-block;
-}
-
-nav a {
-	display: inline-block;
+.picture{
+	max-width: 30%;
+	float: left;
 	padding: 10px;
-	font-weight: bold;
-	font-size: 110%;
-	color: white;
 }
 
+.row {
+	clear: both;
+}
 
-.ovenNorder {
-	width: 18em;
-	height: 14em;
-	float: right;
-	padding: 10px;
+.info {
+	font-size: 24px;
+	text-align: center;
+	padding: 30px;
+}
+
+ol, .drinkdessert {
+	text-align: center;
 }
 
 .footer {
@@ -82,20 +63,8 @@ nav a {
 	text-align: center;
 }
 
-nav a:link,
-nav a:visited {
-	text-decoration: none;
-	color: white;
-}
-
-nav a:hover {
-	background-color: #F60018;
-	border-radius: 5px;
-}
 .pizza {
-	width: 18em;
-	height: 14em;
-	float: right;
+	max-height: 315px;
 	padding: 10px;
 }
 
@@ -107,28 +76,38 @@ nav a:hover {
 .customize {
 	font-weight: bold;
 	font-style: italic;
+	color: #CC00FF;
+	text-align: center;
 }
 
-.secondtier {
-	text-indent: 100px;
-}
-
-.firsttier {
-	text-indent: 50px;
-	margin: 10px;
-}
-
-dl dt {
-	text-indent: 100px;
-	padding: 10px;
-}
-
-dl dd {
-	text-indent: 150px;
-}
-
-h1 {
+h1, h2 {
 	font-style: italic;
 	font-weight: bold;
 	font-size: 24px;
+	padding: 10px;
+}
+
+h2 {
+	clear: both;
+}
+
+h3 {
+	font-weight: bold;
+	font-family: 'Miltonian Tattoo', cursive;
+	font-size: 24px;
+	text-align: center;
+	padding: 10px;
+}
+
+dl dt {
+	font-style: italic;
+	padding-top: 10px;
+	font-family: 'Miltonian Tattoo', cursive;
+}
+
+@media screen and (max-width: 767px) {
+    .container .picture {
+		 display: none; 	
+    }
+   	
 }
