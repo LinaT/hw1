@@ -8,8 +8,11 @@
 
 body {
     font-family: 'Walter Turncoat', sans-serif;
-    background-image: url(../img/toppings.jpg);
-    background-repeat: repeat;
+    background: url('../img/pizza1.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     font-size: 20px;
 }
 
@@ -20,7 +23,13 @@ p {
 
 .container {
 	background: white;
+	background-color: rgba(255, 255, 255, 0.7); /* Color white with alpha 0.9*/
+	max-width: 85%;
+	font-weight: bold;
 }
+
+
+
 .dog{
 	max-width: 100%;
 	padding: 10px;
@@ -97,6 +106,18 @@ h3 {
 	font-size: 24px;
 	text-align: center;
 	padding: 10px;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 28px;
+	padding: 5px;
+	padding-top: 25px;
+	color: #6600CC;
+}
+
+.row {
+	text-align: center;
 }
 
 dl dt {
