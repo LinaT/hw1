@@ -16,7 +16,9 @@ p {
 	padding: 15px;
 }
 
-
+nav {
+	padding: 15px;
+}
 .container {
 	background: white;
 	background-color: rgba(255, 255, 255, 0.7); /* Color white with alpha 0.9*/
@@ -24,16 +26,13 @@ p {
 	font-weight: bold;
 }
 
-
-
 .dog{
 	max-width: 100%;
 	padding: 10px;
-
+	float: right;
 }
 
 .motto {
-	
 	font-size: 30px;
 	text-align: center;
 } 
@@ -114,13 +113,11 @@ h4 {
 ol {
 	text-align: center;
 	padding: 10px;
-
 }
 
 dl dt {
 	font-style: italic;
-	padding-top: 10px;
-	
+	padding-top: 10px;	
 }
 
 .name {
