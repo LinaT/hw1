@@ -1,23 +1,19 @@
-@import url(http://fonts.googleapis.com/css?family=Walter+Turncoat);
-@import url(http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC);
-@import url(http://fonts.googleapis.com/css?family=New+Rocker);
-@import url(http://fonts.googleapis.com/css?family=Miltonian+Tattoo);
-
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
 /* reset CSS file to reset browser default styling to a consistent starting point */
 @import url(reset.css);
 
 body {
-    font-family: 'Walter Turncoat', sans-serif;
+    font-family: 'Share Tech Mono', sans-serif;
     background: url('../img/pizza1.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	 background-size: cover;
     font-size: 20px;
 }
 
 p {
-	padding: 10px;
+	padding: 15px;
 }
 
 
@@ -37,7 +33,7 @@ p {
 }
 
 .motto {
-	font-family: 'New Rocker', sans-serif;
+	
 	font-size: 30px;
 	text-align: center;
 } 
@@ -48,9 +44,6 @@ p {
 	padding: 10px;
 }
 
-.row {
-	clear: both;
-}
 
 .info {
 	font-size: 24px;
@@ -58,7 +51,7 @@ p {
 	padding: 30px;
 }
 
-ol, .drinkdessert {
+.dessert, .drink, .pizza{
 	text-align: center;
 }
 
@@ -87,6 +80,8 @@ ol, .drinkdessert {
 	font-style: italic;
 	color: #CC00FF;
 	text-align: center;
+	font-size: 30px;
+	padding: 20px;
 }
 
 h1, h2 {
@@ -102,8 +97,8 @@ h2 {
 
 h3 {
 	font-weight: bold;
-	font-family: 'Miltonian Tattoo', cursive;
-	font-size: 24px;
+	
+	font-size: 28px;
 	text-align: center;
 	padding: 10px;
 }
@@ -116,14 +111,20 @@ h4 {
 	color: #6600CC;
 }
 
-.row {
+ol {
 	text-align: center;
+	padding: 10px;
+
 }
 
 dl dt {
 	font-style: italic;
 	padding-top: 10px;
-	font-family: 'Miltonian Tattoo', cursive;
+	
+}
+
+.name {
+	padding: 5px;
 }
 
 @media screen and (max-width: 767px) {
@@ -131,4 +132,9 @@ dl dt {
 		 display: none; 	
     }
    	
+}
+
+iframe {
+	float: right;
+	text-align: center;
 }
