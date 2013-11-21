@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lithach">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="img/logo.png">
+    <title>Dawg Pizza Home Page</title>
+    
+    <!-- hot link to Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <!-- our own stylesheet for overrides -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<a href="index.html"><img class="dog" src="img/logo.png" alt="dog"></a>
+	
+		<nav>	
+			<ul class="nav nav-tabs">
+  				<li><a href="index.html">Home</a></li>
+				<li class="active"><a href="menu.html">Menu</a></li>
+				<li><a href="about.html">About Us</a></li>
+			</ul>
+		</nav>
+
+		
+
+		<div class="menu">
+			<h3>Pizza:</h3>
+			<p class="firsttier">All our pizzas are made with hand-thrown thin crust, baked in real wood ovens. Choose from one of these sizes:</p>
+			
+			<ol class="secondtier">
+				<li>Small (12")</li>
+				<li>Medium (14")</li>
+				<li>Large (17")</li>
+			</ol>
+		
+			<p class="customize">All pizzas can be customized--add a few ingredients, or take a few off--for an extra $2.</p>
+
+
+			<div class="pies">
+					<h3>Pizza Pies</h3>
+			</div>	
+				
+				<div class="template pizza">
+					<dl>
+						<dt class="name"></dt>
+						<dd class="description"></dt>
+						<dd class="prices"></dd>
+					</dl>
+					
+				</div>
+
+			<div class="drinks">
+				<h3>Drinks:</h3>
+			</div>
+
+			<div class = "template drink">
+				<p><span class = "name"></span> <span class = "price"></span></p>
+			</div>
+
+			<div class="desserts">
+				<h3>Desserts:</h3>
+			</div>
+
+			<div class = "template dessert">
+				<p><span class = "name"></span> <span class = "price"></span></p>
+			</div>
+
+		</div>
+		
+		<p class="footer">Content copyright 2013. Dawg Pizza. All rights reserved. Call us for delivery: 206-555-1212.</p>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+		<!-- direct link to menu script -->
+		<script src="http://www.dawgpizza.com/orders/menu.js"></script>
+		<!-- my own JavaScript file, which will use the menu data structure
+		    (replace file name with the name of your script file) -->
+		<script src="js/orderMenu.js"></script>
+		<script src="js/model.js"></script>
+	</div>
+</body>
+</html>
