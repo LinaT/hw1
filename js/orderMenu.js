@@ -1,11 +1,17 @@
 var cart = new CartModel();
+var total = 0;
 
 $(function(){
 	renderFood(com.dawgpizza.menu);
 	renderDrink(com.dawgpizza.menu);
 	renderDessert(com.dawgpizza.menu);
+	renderTotal();
 	$('.addOrder').click(addToCart);
 });
+
+function renderTotal(){
+	$(".total-price").html(total);
+};
 
 function removeFromCart(){
 	var item = new ItemModel({
@@ -13,8 +19,12 @@ function removeFromCart(){
 		size: $(this).attr("data-size")
 	});
 
+	total -= parseInt($(this).attr("data-price"));
+
 	cart.removeItem(item);
 	$(this).remove();
+		renderTotal();
+
 }
 
 function addToCart () {
@@ -49,6 +59,9 @@ function addToCart () {
 
 
 	cart.addItem(item);
+	total += parseInt(price);
+		renderTotal();
+
 }
 
 function renderFood(menu) {
