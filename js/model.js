@@ -1,11 +1,13 @@
-function itemModel (input){
+//Create the item model
+function ItemModel (input){
 	this.type = input.type;
 	this.name = input.name;
 	this.qty = input.qty;
 	this.size = input.size;
 }
 
-function cartModel (input){
+//create the cart model
+function CartModel (){
 	this.name = "";
 	this.address = "";
 	this.address2 = "";
@@ -15,7 +17,7 @@ function cartModel (input){
 	this.items = [];
 	
 	this.clearCart = function(){
-		items = [];
+		this.items = [];
 	};
 
 
@@ -51,7 +53,7 @@ function cartModel (input){
 	}
 
 	this.removeItem = function (item){
-		var idx = this.items.indexOf(item);
+		var idx = this.existsInCart(item);
 		if (idx > -1) {
 			this.items.splice(idx, 1);
 		}

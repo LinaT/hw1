@@ -1,9 +1,55 @@
+var cart = new CartModel();
 
 $(function(){
 	renderFood(com.dawgpizza.menu);
 	renderDrink(com.dawgpizza.menu);
 	renderDessert(com.dawgpizza.menu);
+	$('.addOrder').click(addToCart);
 });
+
+function removeFromCart(){
+	var item = new ItemModel({
+		name: $(this).attr("data-name"),
+		size: $(this).attr("data-size")
+	});
+
+	cart.removeItem(item);
+	$(this).remove();
+}
+
+function addToCart () {
+	var type = $(this).data("type");
+	var name = $(this).data("name");
+	var size = "";	
+	if (type == "pizza") {
+		size = $(this).data("size");
+	};
+	var price = $(this).data("price");
+
+	var item = new ItemModel({
+		name: name,
+		type: type,
+		size: size,
+		price: price,
+		qty: 1
+	});
+
+	var itemHtml = $(".template-cart-item").clone().removeClass("template-cart-item");
+	
+	itemHtml.html(name + " " + size + " $" + price);
+	$(".cart-items-container").append(itemHtml);
+
+	itemHtml.click(removeFromCart);
+	itemHtml.attr({
+		"data-name" : name,
+		"data-type": type,
+		"data-size": size,
+		"data-price": price,
+	});
+
+
+	cart.addItem(item);
+}
 
 function renderFood(menu) {
 	var idx;
@@ -17,9 +63,9 @@ function renderFood(menu) {
 	    clonedTemplate = template.clone();
 	    clonedTemplate.find('.name').html(pizza.name);
 	    clonedTemplate.find('.description').html(pizza.description);
-	    clonedTemplate.find('.prices').html("<button type=\"button\" class=\"btn btn-default\">$" + pizza.prices[0] + "</button>  " 
-	    									+ "<button type=\"button\" class=\"btn btn-default\">$" + pizza.prices[1] + "</button>  " 
-	    									+ "<button type=\"button\" class=\"btn btn-default\">$" + pizza.prices[2] + "</button>  " );
+	    clonedTemplate.find('.prices').html('<button type="button" class="btn btn-default addOrder" data-type = "pizza" data-name = "' + pizza.name + '" data-size = "small" data-price = "' + pizza.prices[0] + '""> $' + pizza.prices[0] + '</button>  ' 
+	    									+ '<button type="button" class="btn btn-default addOrder" data-type = "pizza" data-name = "' + pizza.name + '" data-size = "medium" data-price = "' + pizza.prices[1] + '""> $' + pizza.prices[1] + '</button>  ' 
+	    									+ '<button type="button" class="btn btn-default addOrder" data-type = "pizza" data-name = "' + pizza.name + '" data-size = "large" data-price = "' + pizza.prices[2] + '""> $' + pizza.prices[2] + '</button>  ' );
 	    
 		clonedTemplate.removeClass('template');
 	   
@@ -39,7 +85,7 @@ function renderDrink(menu) {
 	    drink = menu.drinks[idx];
 	    clonedTemplate = template.clone();
 	    clonedTemplate.find('.name').html(drink.name);
-	    clonedTemplate.find('.price').html(' $' + drink.price);
+	    clonedTemplate.find('.price').html('<button type="button" class="btn btn-default btn-sm" addOrder" data-type = "drink" data-name = "' + drink.name + '" data-price = "' + drink.price + '"> $' + drink.price + '</button>  ' );
 	    
 	    clonedTemplate.removeClass('template');
 		container.append(clonedTemplate);
@@ -57,7 +103,7 @@ function renderDessert(menu) {
 	    dessert = menu.desserts[idx];
 	    clonedTemplate = template.clone();
 	    clonedTemplate.find('.name').html(dessert.name);
-	    clonedTemplate.find('.price').html(' $' + dessert.price);
+	    clonedTemplate.find('.price').html('<button type="button" class="btn btn-default btn-sm" addOrder" data-type = "dessert" data-name = "' + dessert.name + '" data-price = "' + dessert.price + '"> $' + dessert.price + '</button>  ' );
 	    
 	    clonedTemplate.removeClass('template');
 		container.append(clonedTemplate);

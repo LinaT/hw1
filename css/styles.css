@@ -131,7 +131,46 @@ dl dt {
    	
 }
 
+
 iframe {
 	float: right;
 	text-align: center;
+}
+
+.total-price {
+    font-weight: bold;
+}
+
+.total-row {
+    border-top: 1px solid #AAA;
+}
+
+.button-row {
+    margin-top: 2em;
+    text-align: right;
+}
+
+.row {
+	padding: 10px;
+	background: url(../images/white_to_grey.gif) top repeat-x;
+	background: -moz-linear-gradient(bottom, #dedede, white 75%);
+	background: -webkit-gradient(linear, 0 0, 0 75%, from(white), to(#dedede));
+	
+}
+
+h5 {
+	font-size: 30px;
+	text-align: center;
+}
+
+.cart-items-container {
+	padding: 10px;
+}
+
+.template-cart-item {
+	padding: 10px;
+}
+
+.cart-items-container button {
+	display: block;
 }

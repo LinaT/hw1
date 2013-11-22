@@ -25,7 +25,29 @@
 			</ul>
 		</nav>
 
-		
+		<div class="row">
+            <div class="col-md-4 col-md-push-8">
+                <h5>Your Cart</h5>
+                <div class="cart-items-container">Test</div>
+                <button type="button" class="template-cart-item removeItem" ></button>
+                <div class="cart-footer">
+                    <div class="row total-row">
+                        <div class="col-xs-10">
+                            Total:
+                        </div>
+                        <div class="col-xs-2">
+                            $<span class="total-price"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 button-row">
+                            <button type="button" class="btn btn-primary place-order">Order Now!</button>
+                        </div>
+                    </div>                        
+                </div>
+            </div> 
+        </div>
+
 
 		<div class="menu">
 			<h3>Pizza:</h3>
@@ -80,8 +102,9 @@
 		<script src="http://www.dawgpizza.com/orders/menu.js"></script>
 		<!-- my own JavaScript file, which will use the menu data structure
 		    (replace file name with the name of your script file) -->
-		<script src="js/orderMenu.js"></script>
 		<script src="js/model.js"></script>
+				<script src="js/orderMenu.js"></script>
+
 	</div>
 </body>
 </html>
