@@ -6,7 +6,7 @@ $(function(){
 	renderDrink(com.dawgpizza.menu);
 	renderDessert(com.dawgpizza.menu);
 	renderTotal();
-	//$('.addOrder').click(addToCart);
+	$('.addOrder').click(addToCart);
 	//$(".template-cart-item").remove();
 
 	//creates the total, subtotal and taxes
@@ -39,7 +39,7 @@ $(function(){
 
  
     });
-    $('.addOrder').click(addToCart);
+    
 	// adds an item into the cart
 	function addToCart () {
 		var type = $(this).data("type");
@@ -72,11 +72,9 @@ $(function(){
 			"data-price": price,
 		});
 
-
 		cart.addItem(item);
 		total += parseInt(price);
-			renderTotal();
-
+		renderTotal();
 	}
 
 	//submits the order into a modal with click
@@ -123,10 +121,7 @@ $(function(){
 		    									+ '<button type="button" class="btn btn-default addOrder" data-type = "pizza" data-name = "' + pizza.name + '" data-size = "large" data-price = "' + pizza.prices[2] + '""> $' + pizza.prices[2] + '</button>  ' );
 		    
 			clonedTemplate.removeClass('template');
-		   
-
-			container.append(clonedTemplate);
-		    
+			container.append(clonedTemplate);    
 		} //for each pizza
 	}
 
@@ -141,7 +136,6 @@ $(function(){
 		    clonedTemplate = template.clone();
 		    clonedTemplate.find('.name').html(drink.name);
 		    clonedTemplate.find('.price').html('<button type="button" class="btn btn-default btn-sm" addOrder" data-type = "drink" data-name = "' + drink.name + '" data-price = "' + drink.price + '"> $' + drink.price + '</button>  ' );
-		    
 		    clonedTemplate.removeClass('template');
 			container.append(clonedTemplate);
 		} //for each drink
@@ -159,7 +153,6 @@ $(function(){
 		    clonedTemplate = template.clone();
 		    clonedTemplate.find('.name').html(dessert.name);
 		    clonedTemplate.find('.price').html('<button type="button" class="btn btn-default btn-sm" addOrder" data-type = "dessert" data-name = "' + dessert.name + '" data-price = "' + dessert.price + '"> $' + dessert.price + '</button>  ' );
-		    
 		    clonedTemplate.removeClass('template');
 			container.append(clonedTemplate);
 		} //for each dessert
