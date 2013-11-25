@@ -9,29 +9,31 @@ function ItemModel (input){
 //create the cart model
 function CartModel (){
 	this.name = "";
-	this.address = "";
+	this.address1 = "";
 	this.address2 = "";
 	this.zip = "";
+	this.phone = "";
 	this.nextUrl = "";
 	this.nextCaption = "";
 	this.items = [];
 	
+	//clears the cart
 	this.clearCart = function(){
 		this.items = [];
 	};
 
-
+	//takes in the info given by user and adds to cart
 	this.populateInfo = function (input){
 		this.name = input.name;
-		this.address = input.address;
+		this.address1 = input.address1;
 		this.address2 = input.address2;
 		this.zip = input.zip;
+		this.phone = input.phone;
 		this.nextUrl = input.nextUrl;
 		this.nextCaption = input.nextCaption;
-		this.items = input.items;
 	};
 
-
+	//add item to the cart and calls method to checks if it exsist in cart already
 	this.addItem = function (item){
 		var item1 = this.existsInCart(item);
 		if(item1 != -1) {
@@ -52,6 +54,7 @@ function CartModel (){
 		return -1;
 	}
 
+	//remove an item from the cart
 	this.removeItem = function (item){
 		var idx = this.existsInCart(item);
 		if (idx > -1) {

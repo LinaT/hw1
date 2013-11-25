@@ -20,34 +20,98 @@
 		<nav>	
 			<ul class="nav nav-tabs">
   				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="menu.html">Menu</a></li>
+				<li><a href="menu.html">Menu</a></li>
+				<li class="active"><a href="order.html">Order</a></li>
 				<li><a href="about.html">About Us</a></li>
 			</ul>
 		</nav>
 
-		<div class="row">
-            <div class="col-md-4 col-md-push-8">
-                <h5>Your Cart</h5>
-                <div class="cart-items-container">Test</div>
-                <button type="button" class="template-cart-item removeItem" ></button>
-                <div class="cart-footer">
-                    <div class="row total-row">
-                        <div class="col-xs-10">
-                            Total:
-                        </div>
-                        <div class="col-xs-2">
-                            $<span class="total-price"></span>
-                        </div>
+		<h3>We deliver within Seattle city limits from noon to 11:00pm!</h3>
+
+		<div class="row my-cart">
+            <h5>Your Cart</h5>
+            <div class="cart-items-container"></div>
+            <button type="button" class="template 1 template-cart-item empty removeItem"></button>
+            <div class="cart-footer">
+                <div class="row subtotal-row">
+                    <div class="col-xs-10">
+                        Subtotal:
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 button-row">
-                            <button type="button" class="btn btn-primary place-order">Order Now!</button>
-                        </div>
-                    </div>                        
+                    <div class="col-xs-2">
+                        $<span class="subtotal-price"></span>
+                    </div>
                 </div>
-            </div> 
+                <div class="row tax-row">
+                    <div class="col-xs-10">
+                        Tax:
+                    </div>
+                    <div class="col-xs-2">
+                        $<span class="tax-price"></span>
+                    </div>
+                </div>
+                <div class="row total-row">
+                    <div class="col-xs-10">
+                        Total:
+                    </div>
+                    <div class="col-xs-2">
+                        $<span class="total-price"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 button-row">
+                        <button type="button" class="btn btn-primary test place-order">Order Now!</button>
+                        <button type="button" class="btn btn-primary clear-cart"><a class = "ref" href="order.html">Empty Cart</a></button>
+                    </div>
+                </div>                        
+            </div>
+             
         </div>
 
+        <div class="modal fade" id="submitOrderForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+		                        &times;
+		                </button>
+		                <h4 class="modal-title" id="modalTitle">Please Fill Out your Information:</h4>
+		            </div>
+		            <div class="modal-body">
+		                <form method="post" action="http://dawgpizza.com/orders/" class="address-form">
+		                    <div class="form-group">
+		                        <label for="name">Name</label>
+		                        <input type="text" class="form-control form-name" placeholder="Name" required>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="address">Address</label>
+		                        <input type="text" class="form-control form-line1" placeholder="Line 1" required>
+		                        <input type="text" class="form-control form-line2" placeholder="Line 2">
+		                    </div>
+		                    <div class="row">
+		                        <div class="form-group col-xs-3">
+		                            <label for="zip">Zip Code</label>
+		                            <input type="text" class="form-control form-zip" placeholder="Zip Code" required>
+		                        </div>
+		                        <div class="form-group col-xs-6">
+		                            <label for="phone">Phone Number</label>
+		                            <input type="text" class="form-control form-phone" placeholder="Phone Number" required>
+		                        </div>
+		                    </div>
+		                    <input type="hidden" name="cart" id="jsonForm"/>
+		                    <button type="submit" class="hidden-submit"></button>
+		                </form>
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">
+		                        Cancel
+		                </button>
+		                <button type="button" class="btn btn-primary finalSubmitButton">
+		                        Submit My Order
+		                </button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
 
 		<div class="menu">
 			<h3>Pizza:</h3>

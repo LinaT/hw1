@@ -50,6 +50,15 @@ nav {
 	padding: 30px;
 }
 
+.ref {
+	color: white;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
 .dessert, .drink, .pizza{
 	text-align: center;
 }
@@ -151,11 +160,12 @@ iframe {
 }
 
 .row {
-	padding: 10px;
+	padding: 15px;
+
 	background: url(../images/white_to_grey.gif) top repeat-x;
 	background: -moz-linear-gradient(bottom, #dedede, white 75%);
 	background: -webkit-gradient(linear, 0 0, 0 75%, from(white), to(#dedede));
-	
+
 }
 
 h5 {
@@ -167,10 +177,15 @@ h5 {
 	padding: 10px;
 }
 
-.template-cart-item {
-	padding: 10px;
-}
-
 .cart-items-container button {
 	display: block;
 }
+
+.my-cart {
+	padding: 40px;
+}
+
+ button {
+	padding: 10px;
+}
+
